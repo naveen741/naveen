@@ -1,0 +1,15 @@
+form{
+    display:flex;
+    flex-direction: column;
+    background-color: aqua;
+    padding: 30px;
+}
+label{
+    color: rgb(9, 12, 12);
+}
+input{
+    width: 25%;
+}
+select{
+    width: 25%;
+}
