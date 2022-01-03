@@ -1,23 +1,23 @@
 
-    var myForm=document.getElementById("form-1");
-    var i=0;
+    const myForm=document.getElementById("form-1");
+    let i=0;
     myForm.addEventListener("submit",function(evt){
         evt.preventDefault();
-        var myName=document.getElementById("name").value;
-        var myLName=document.getElementById("l-name").value;
-        var myDOB=document.getElementById("dob").value;
-        var myNation=document.getElementById("nation").value;
-        var myNum=document.getElementById("number").value;
-        var myAdd=document.getElementById("address").value;
-        var myCon=document.getElementsByClassName("subContainer");
-        var myContent=document.createElement("div");
-        var name=document.createElement("h2")
-        var lname=document.createElement("h2")
-        var DOB=document.createElement("h2")
-        var nation=document.createElement("h2")
-        var num=document.createElement("h2")
-        var add=document.createElement("h2")
-        var myDiv=myCon[i].getElementsByTagName("div");
+        const myName=document.getElementById("name").value;
+        const myLName=document.getElementById("l-name").value;
+        const myDOB=document.getElementById("dob").value;
+        const myNation=document.getElementById("nation").value;
+        const myNum=document.getElementById("number").value;
+        const myAdd=document.getElementById("address").value;
+        const myCon=document.getElementsByClassName("subContainer");
+        const myContent=document.createElement("div");
+        const name=document.createElement("h2")
+        const lname=document.createElement("h2")
+        const DOB=document.createElement("h2")
+        const nation=document.createElement("h2")
+        const num=document.createElement("h2")
+        const add=document.createElement("h2")
+        const myDiv=myCon[i].getElementsByTagName("div");
         name.innerText=`First Name : ${myName}`;
         myContent.appendChild(name);
         
