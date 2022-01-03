@@ -4,44 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles1.css">
+    <script src="script.js" defer></script>
     <title>form</title>
 </head>
 <body>
+    <div class="head"><h1>Personal Details</h1></div>
     <div class="container">
-        <h1>Personal Details</h1>
-    <form>
-        <label for="name">First Name : </label>
-        <input id="name" type="text" placeholder="Your Name" required>
-        <label for="l-name">Last Name : </label>
-        <input id="l-name" type="text" placeholder="Your father Name">
-        <label for="dob">DOB  : </label>
-        <input id="dob" type="date" placeholder="Your Date of birth">
-        <div class="gender">
-            <label>Gender : </label>
-            <input id="male" name="gender" type="radio">
-            <label for="male">Male</label>
-            <input id="female" name="gender" type="radio">
-            <label for="female">Female</label>
+        <div class="subContainer">
+            <h1>previous-1</h1>
+            <div></div>
         </div>
-        <label for="nation">Nationality : </label>
-        <select id="nation">
-            <option>Select country</option>
-            <option>india</option>
-            <option>USA</option>
-        </select>
-        <label for="number">Phone Number : </label>
-        <input type="tel" id="number" placeholder="Enter your number">
-        <label for="address">Address : </label>
-        <textarea id="address" placeholder="your address" value="addresses"></textarea>
-        <div class="interest">
-            <label>Field of Interest : </label>
-            <label><input id="fullStack" type="checkbox" name="interest">Full Stack Developer</label>
-            <label><input id="android" type="checkbox" name="interest">Android Application Developer</label>
-            <label><input id="AI" type="checkbox" name="interest">Artificial Intelligence</label>
+        <div class="subContainer">
+            <h1>current</h1>
+            <form id="form-1">
+                <label for="name">First Name : </label>
+                <input id="name" type="text" placeholder="Your Name" required>
+                <label for="l-name">Last Name : </label>
+                <input id="l-name" type="text" placeholder="Your father Name">
+                <label for="dob">DOB  : </label>
+                <input id="dob" type="date" placeholder="Your Date of birth">
+                <div class="gender">
+                    <label>Gender : </label>
+                    <input id="male" name="gender" type="radio">
+                    <label for="male">Male</label>
+                    <input id="female" name="gender" type="radio">
+                    <label for="female">Female</label>
+                </div>
+                <label for="nation">Nationality : </label>
+                <select id="nation">
+                    <option>Select country</option>
+                    <option>india</option>
+                    <option>USA</option>
+                </select>
+                <label for="number">Phone Number : </label>
+                <input type="tel" id="number" placeholder="Enter your number">
+                <label for="address">Address : </label>
+                <textarea id="address" placeholder="your address" value="addresses"></textarea>
+                <div class="interest">
+                    <label>Field of Interest : </label>
+                    <label><input id="fullStack" type="checkbox" name="interest">Full Stack Developer</label>
+                    <label><input id="android" type="checkbox" name="interest">Android Application Developer</label>
+                    <label><input id="AI" type="checkbox" name="interest">Artificial Intelligence</label>
+                </div>
+                <br>
+                <input id="sub" type="submit" >
+            </form>
         </div>
-        <br>
-        <input id="sub" type="submit" >
-    </form>
-</div>
+        <div class="subContainer">
+            <h1>previous-2</h1>
+            <div ></div>
+        </div>
+    </div>
+
 </body>
 </html>
