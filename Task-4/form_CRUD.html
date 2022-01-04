@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>form</title>
+</head>
+<body>
+    <div class="head"><h1>Personal Details</h1></div>
+    <div class="container">
+        
+        <div class="subContainer">
+            <form id="form-1">
+                <label for="name">Full Name : </label>
+                <input id="name" type="text" placeholder="Your Name" required>
+                <label for="dob">DOB  : </label>
+                <input id="dob" type="date" placeholder="Your Date of birth" required>
+                <div class="gender">
+                    <label>Gender : </label>
+                    <input id="male" value="male" name="gender" type="radio">
+                    <label for="male">Male</label>
+                    <input id="female" value="female" name="gender" type="radio">
+                    <label for="female" >Female</label>
+                </div>
+                <label for="nation">Nationality : </label>
+                <select id="nation" required>
+                    <option>Select country</option>
+                    <option>india</option>
+                    <option>USA</option>
+                </select>
+                <label for="number">Phone Number : </label>
+                <input type="tel" id="number" placeholder="Enter your number" required>
+                <label for="address">Address : </label>
+                <textarea id="address" placeholder="your address" value="addresses" required></textarea>
+                <div class="interest">
+                    <label>Field of Interest : </label>
+                    <label><input id="fullStack" value="Full Stack Developer" type="checkbox" name="interest">Full Stack Developer</label>
+                    <label><input id="android" value="Android Application Developer" type="checkbox" name="interest">Android Application Developer</label>
+                    <label><input id="AI" value="Artificial Intelligence" type="checkbox" name="interest">Artificial Intelligence</label>
+                </div>
+                <input id="sub" type="submit" >
+            </form>
+        </div>
+        <div class="table">
+            <table>
+                <tbody>
+                    <tr>
+                        <th class="no">No</th>
+                        <th class="Name">name</th>
+                        <th class="DOB">DOB</th>
+                        <th class="Gender">Gender</th>
+                        <th class="Nationality">Nationality</th>
+                        <th class="Phonenumber">Phone Number</th>
+                        <th class="address">Address</th>
+                        <th class="Interest">Field of Interest</th>
+                        <th class="action">Action</th>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script >
+        var myForm=document.querySelector("#form-1");
+        var myTbody=document.querySelector("tbody");
+        var myDetails=document.querySelectorAll("th");
+        var obj=[],temp=[],data=[];
+        var x=0;
+        myForm.addEventListener("submit", function(evt){
+            evt.preventDefault();
+            const myName=document.getElementById("name");
+            const myDOB=document.getElementById("dob");
+            const male=document.getElementById("male");
+            const female=document.getElementById("female");
+            const myNation=document.getElementById("nation");
+            const myNum=document.getElementById("number");
+            const myAdd=document.getElementById("address");
+            let myGen,myInterest=[],i=0,n=1;
+            if(male.checked){
+                myGen=male.value;
+            }
+            else if(female.checked){
+                myGen=female.value;
+            }
+            if(document.getElementById("fullStack").checked){
+                myInterest[i++]=`${document.getElementById("fullStack").value} `;
+            }
+            if(document.getElementById("android").checked){
+                myInterest[i++]=`${document.getElementById("android").value} `;
+            }
+            if(document.getElementById("AI").checked){
+                myInterest[i++]=`${document.getElementById("AI").value} `;
+            }
+            obj[x]={No:n++,Name:myName.value,DOB:myDOB.value,Gender:myGen,Nationality:myNation.value,Phonenumber:myNum.value,address:myAdd.value,Interest:myInterest};
+            var myTr=document.createElement("tr");
+            var newDetail=[];
+            for(let i=0;i<8;i++){
+                newDetail[i]=document.createElement("td");
+            }
+            newDetail[0].innerText=obj[x].No;
+            newDetail[1].innerText=obj[x].Name;
+            newDetail[2].innerText=obj[x].DOB;
+            newDetail[3].innerText=obj[x].Gender;
+            newDetail[4].innerText=obj[x].Nationality;
+            newDetail[5].innerText=obj[x].Phonenumber;
+            newDetail[6].innerText=obj[x].address;
+            newDetail[7].innerText=obj[x].Interest;
+            for(let i=0;i<8;i++){
+                myTr.appendChild(newDetail[i]);
+            }
+            myTbody.appendChild(myTr);
+            myName.value="";
+            myDOB.value="";
+            myNation.value="";
+            myNum.value="";
+            myAdd.value="";
+            male.checked=false;
+            female.checked=false;
+            document.getElementById("fullStack").checked=false;
+            document.getElementById("android").checked=false;
+            document.getElementById("AI").checked=false;
+        });
+    </script>
+</body>
+</html>
