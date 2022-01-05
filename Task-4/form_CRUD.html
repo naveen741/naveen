@@ -46,7 +46,7 @@
             <table>
                 <tbody>
                     <tr>
-                        <th class="no">No</th>
+                        <!--<th class="no" >No</th>-->
                         <th class="Name">name</th>
                         <th class="DOB">DOB</th>
                         <th class="Gender">Gender</th>
@@ -64,9 +64,8 @@
     <script >
         var myForm=document.querySelector("#form-1");
         var myTbody=document.querySelector("tbody");
-        var myDetails=document.querySelectorAll("th");
-        var obj=[],temp=[],data=[];
-        var x=0;
+        var obj=[];
+        var x=0,n=0;
         myForm.addEventListener("submit", function(evt){
             evt.preventDefault();
             const myName=document.getElementById("name");
@@ -76,7 +75,7 @@
             const myNation=document.getElementById("nation");
             const myNum=document.getElementById("number");
             const myAdd=document.getElementById("address");
-            let myGen,myInterest=[],i=0,n=1;
+            let myGen,myInterest=[],i=0;
             if(male.checked){
                 myGen=male.value;
             }
@@ -92,20 +91,32 @@
             if(document.getElementById("AI").checked){
                 myInterest[i++]=`${document.getElementById("AI").value} `;
             }
-            obj[x]={No:n++,Name:myName.value,DOB:myDOB.value,Gender:myGen,Nationality:myNation.value,Phonenumber:myNum.value,address:myAdd.value,Interest:myInterest};
+            obj[x]={/*No:n++,*/Name:myName.value,DOB:myDOB.value,Gender:myGen,Nationality:myNation.value,Phonenumber:myNum.value,address:myAdd.value,Interest:myInterest};
             var myTr=document.createElement("tr");
+            myTr.setAttribute("class","details");
             var newDetail=[];
             for(let i=0;i<8;i++){
                 newDetail[i]=document.createElement("td");
             }
-            newDetail[0].innerText=obj[x].No;
-            newDetail[1].innerText=obj[x].Name;
-            newDetail[2].innerText=obj[x].DOB;
-            newDetail[3].innerText=obj[x].Gender;
-            newDetail[4].innerText=obj[x].Nationality;
-            newDetail[5].innerText=obj[x].Phonenumber;
-            newDetail[6].innerText=obj[x].address;
-            newDetail[7].innerText=obj[x].Interest;
+            //newDetail[0].innerText=obj[x].No;
+            newDetail[0].innerText=obj[x].Name;
+            newDetail[1].innerText=obj[x].DOB;
+            newDetail[2].innerText=obj[x].Gender;
+            newDetail[3].innerText=obj[x].Nationality;
+            newDetail[4].innerText=obj[x].Phonenumber;
+            newDetail[5].innerText=obj[x].address;
+            newDetail[6].innerText=obj[x].Interest;
+            //newDetail[8].innerHTML=`<button onclick="edit()" class="edit">edit</button><button onclick="del()"class="delete">delete</button>`;
+            var edBtn=document.createElement("button");
+            var delBtn=document.createElement("button");
+            edBtn.innerText="edit";
+            delBtn.innerText="del";
+            edBtn.setAttribute("class","edits");
+            delBtn.setAttribute("class","deletes");
+            edBtn.setAttribute("onclick",`edit(${x})`);
+            delBtn.setAttribute("onclick",`del(${x})`);
+            newDetail[7].appendChild(edBtn);
+            newDetail[7].appendChild(delBtn);
             for(let i=0;i<8;i++){
                 myTr.appendChild(newDetail[i]);
             }
@@ -120,7 +131,44 @@
             document.getElementById("fullStack").checked=false;
             document.getElementById("android").checked=false;
             document.getElementById("AI").checked=false;
+            x++;
+            
         });
+        function edit(ans){
+            document.getElementById("name").value=obj[ans].Name;
+            document.getElementById("dob").value=obj[ans].DOB;
+            if(obj[ans].Gender=="male"){
+                document.getElementById("male").checked=true;
+            }
+            else{
+                document.getElementById("female").checked=true;
+            }
+            document.getElementById("nation").value=obj[ans].Nationality;
+            document.getElementById("number").value=obj[ans].Phonenumber;
+            myAdd=document.getElementById("address").value=obj[ans].address;
+            var arr=obj[ans].Interest;
+            for(let i=0;i<obj[ans].Interest.length;i++){
+                if(obj[ans].Interest[i].localeCompare(document.getElementById("fullStack").value) ){
+                    document.getElementById("fullStack").checked=true;
+                }
+                console.log(obj[ans].Interest[i]==document.getElementById("android").value);
+                if(obj[ans].Interest[i].localeCompare(document.getElementById("android").value)){
+                    document.getElementById("android").checked=true;
+                }
+                console.log(obj[ans].Interest[i],document.getElementById("AI").value);
+                if(obj[ans].Interest[i].localeCompare(document.getElementById("AI").value)){
+                    document.getElementById("AI").checked=true;
+                }
+                
+            }
+            del(ans);
+        }
+        function del(ans){
+            var allDetails=myTbody.querySelectorAll(".details");
+            //myTbody.removeChild(allDetails[ans]);
+            allDetails[ans].innerHTML=""
+           
+        }
     </script>
 </body>
 </html>
