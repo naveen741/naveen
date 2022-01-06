@@ -50,7 +50,7 @@ var myForm=document.querySelector("#form-1");
             clrForm();
         }
         function del(ans){
-            alert(`Are you sure?? you are deleting ${ans+1} row`)
+            alert(`Are you sure?? you are deleting a row`)
             var allDetails=myTbody.querySelectorAll(".details");
             allDetails[ans].innerHTML="";
             clrForm();
@@ -83,7 +83,16 @@ var myForm=document.querySelector("#form-1");
             if(document.getElementById("AI").checked){
                 myInterest[i++]=`${document.getElementById("AI").value} `;
             }
-            obj[ans]={/*No:n++,*/Name:myName.value,DOB:myDOB.value,Gender:myGen,Nationality:myNation.value,Phonenumber:myNum.value,address:myAdd.value,Interest:myInterest,checkValue:check};
+            var temp=[];
+            temp["Name"]=myName.value;
+            temp["DOB"]=myDOB.value;
+            temp["Gender"]=myGen;
+            temp["Nationality"]=myNation.value;
+            temp["Phonenumber"]=myNum.value;
+            temp["address"]=myAdd.value;
+            temp["Interest"]=myInterest;
+            temp["checkValue"]=check;
+            obj[ans]=temp;
             var myTr=document.createElement("tr");
             myTr.setAttribute("class","details");
             var newDetail=[];
