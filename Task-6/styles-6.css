@@ -1,0 +1,47 @@
+.container{
+    background-color: #a8b5f7;
+}
+.subContainer{
+    margin: 0px 15px ;
+}
+.collapseTab {
+    background-color: #6c6ab3;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.collapseTab:after {
+    float: right;
+    content: '\002B';
+}
+
+.active:after {
+    float: right;
+    content: "\2212";
+}
+
+.content {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: 1s ease-in;
+    
+}
+.in-content{
+    font-size: 15px;
+    padding: 15px;
+}
+.content :nth-child(odd){
+    background-color: #7ab9f9;
+}
+.content :nth-child(even){
+    background-color: #adbaf9;
+}
+.heading{
+    text-align: center;
+}
