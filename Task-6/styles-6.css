@@ -1,12 +1,11 @@
 .container{
-    background-color: #a8b5f7;
+    background-color: #84c1c0;
 }
 .subContainer{
     margin: 0px 15px ;
 }
 .collapseTab {
-    background-color: #6c6ab3;
-    color: white;
+    background-color: #91d3e0;
     padding: 20px;
     width: 100%;
     font-size: 15px;
@@ -14,12 +13,16 @@
 
 .collapseTab:after {
     float: right;
-    content: '\002B';
+    content: " ";
+    width: 20px;
+    height: 15px;
+    background-image: url(./images/spriteimage.svg);
+    background-position: -596px 77px;
 }
 
 .active:after {
     float: right;
-    content: "\2212";
+    transform: rotate(180deg);
 }
 
 .content {
@@ -44,4 +47,9 @@
 }
 .heading{
     text-align: center;
+    padding: 5px;
+    border: 2px solid;
+}
+.game{
+    padding: 15px;
 }
