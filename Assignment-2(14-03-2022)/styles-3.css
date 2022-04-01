@@ -1,0 +1,33 @@
+.header{
+    text-align: center;
+    background-color: #c7e5ff;
+    border: 5px solid black;
+}
+.sub-Container{
+    margin-top: 5%;
+}
+.heading{
+    padding: 25px;
+}
+.form-1{
+    text-align: center;
+}
+#task{
+    padding: 7px;
+    width: 25%;
+}
+.button{
+    width: 10%;
+    padding: 7px;
+}
+.answer{
+    margin-left: 40%;
+    
+}
+.logOut{
+    float: right;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid;
+    background-color: #82ffff;
+}

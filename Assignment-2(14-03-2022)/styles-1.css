@@ -1,0 +1,24 @@
+.credentials{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+.header{
+    text-align: center;
+    background-color: #c7e5ff;
+    border: 5px solid black;
+}
+.heading{
+    padding: 25px;
+}
+.sign-in{
+    display: flex;
+    justify-content: center;
+}
+#submit{
+    width: 30%;
+    margin: 5% 35%;
+}
+.sign-up{
+    text-align: center;
+}
