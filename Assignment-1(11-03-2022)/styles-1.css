@@ -1,0 +1,20 @@
+.heading{
+    margin: 0;
+}
+#images{
+    border: 2px solid rgb(22, 16, 16);
+}    
+.myPara{
+    margin-left: 0%;
+}
+.header{
+    text-align: center;
+    background-color: #c7e5ff;
+    border: 5px solid black;
+    padding: 25px;
+}
+#answer{
+    text-align: center;
+    padding: 5px;
+    background-color: #c7e5ff;
+}
