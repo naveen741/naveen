@@ -29,7 +29,7 @@ var myForm=document.querySelector("#form-1");
             if(obj[ans].checkValue[2]){
                 document.getElementById("AI").checked=true;
             }
-                
+            document.getElementById("address").value=obj[ans].address;    
             var myBtn=document.querySelector(".btn");
             if(flag==0){
                 var mySub=document.getElementById("sub");
