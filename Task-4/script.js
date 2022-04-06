@@ -1,7 +1,7 @@
 var myForm=document.querySelector("#form-1");
         var myTbody=document.querySelector("tbody");
         var obj=[];
-        var x=0,n=0,flag=0;
+        var x=0,flag=0;
         myForm.addEventListener("submit", function(evt){
             evt.preventDefault();
             objArr(x,8);
@@ -20,7 +20,7 @@ var myForm=document.querySelector("#form-1");
             }
             document.getElementById("nation").value=obj[ans].Nationality;
             document.getElementById("number").value=obj[ans].Phonenumber;
-            var myAdd=document.getElementById("address").value=obj[ans].address;
+            //var myAdd=document.getElementById("address").value=obj[ans].address;
             if(obj[ans].checkValue[0]){
                 document.getElementById("fullStack").checked=true;
             }
