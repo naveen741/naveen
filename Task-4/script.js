@@ -20,7 +20,7 @@ var myForm=document.querySelector("#form-1");
             }
             document.getElementById("nation").value=obj[ans].Nationality;
             document.getElementById("number").value=obj[ans].Phonenumber;
-            myAdd=document.getElementById("address").value=obj[ans].address;
+            var myAdd=document.getElementById("address").value=obj[ans].address;
             if(obj[ans].checkValue[0]){
                 document.getElementById("fullStack").checked=true;
             }
