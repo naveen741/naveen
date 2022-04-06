@@ -14,26 +14,26 @@
         });
         function strike(val){
             var myList=document.querySelectorAll(".list");
-            for(let i=0;i<myList.length;i++){
-                if(myList[i].value==val+1){
-                    myList[i].style="text-decoration: line-through";
+            for(let i of myList){
+                if(i.value==val+1){
+                    i.style="text-decoration: line-through";
                 }
             }
         }
         function unstrike(val){
             var myList=document.querySelectorAll(".list");
-            for(let i=0;i<myList.length;i++){
-                if(myList[i].value==val+1){
-                    myList[i].style="text-decoration: none";
+            for(let i of myList){
+                if(i.value==val+1){
+                    i.style="text-decoration: none";
                 }
             }
         }
         var clearBtn=document.getElementById("clear");
         clearBtn.addEventListener("click",function(){
             var myList=document.querySelectorAll(".list");
-            for(let i=0;i<myList.length;i++){
-                if(myList[i].style["text-decoration"]=="line-through"){
-                    document.getElementById("Mylist").removeChild(myList[i]);
+            for(let i of myList){
+                if(i.style["text-decoration"]=="line-through"){
+                    document.getElementById("Mylist").removeChild(i);
                 }
             }
         });
