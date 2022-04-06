@@ -14,11 +14,9 @@
 .sign-up{
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 #submit{
     width: 30%;
     margin: 5% 35%;
-}
-.sign-up{
-    text-align: center;
 }
