@@ -53,7 +53,6 @@
         myContent.appendChild(add);
 
         myCon[i].replaceChild(myContent,myDiv[0]);
-        //myCon[i].appendChild(myContent);
         myName.value="";
         myLName.value="";
         myDOB.value="";
